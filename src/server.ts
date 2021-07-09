@@ -1,6 +1,7 @@
 import express from 'express'
 import cors from 'cors'
 import dotenv from 'dotenv'
+import routes from './routes'
 import DbConnection from './database/dbConnection'
 
 const app = express()
@@ -8,6 +9,7 @@ dotenv.config()
 
 app.use(cors())
 app.use(express.json())
+app.use(routes)
 
 console.log('\x1b[33m-Starting servers -------------------')
 

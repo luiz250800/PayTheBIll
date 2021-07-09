@@ -1,6 +1,14 @@
 import mongoose from 'mongoose'
+const Schema = mongoose.Schema;
+const ObjectId = Schema.Types.ObjectId;
 
-const Produto = new mongoose.Schema({
+const Produto = new Schema({
+    categoriaProduto: [
+        { 
+            type: ObjectId, 
+            ref: "categoriaProduto" 
+        }
+    ],
     nmProduto: {
         type: String,
         require: true
