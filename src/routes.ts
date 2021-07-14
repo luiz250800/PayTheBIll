@@ -1,9 +1,9 @@
 import {Router, Request, Response} from 'express'
-import categoriaProdutoRoutes from './routes/CategoriaProdutoRoutes'
+import ProductCategoryRoutes from './routes/ProductCategoryRoutes'
 
 const routes = Router()
 
-routes.use('/api/', categoriaProdutoRoutes)
+routes.use('/api/', ProductCategoryRoutes)
 routes.use((request: Request, response: Response) => {
     response.send(404)
 })

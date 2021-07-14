@@ -2,28 +2,30 @@ import mongoose from 'mongoose'
 const Schema = mongoose.Schema;
 const ObjectId = Schema.Types.ObjectId;
 
-const Produto = new Schema({
-    categoriaProduto: [
+const Product = new Schema({
+    productCategory: [
         { 
             type: ObjectId, 
-            ref: "categoriaProduto" 
+            ref: "productCategory" 
         }
     ],
-    nmProduto: {
+    nmProduct: {
         type: String,
         require: true
     },
-    dsProduto: {
+    dsProduct: {
         type: String,
     },
-    vlProduto: {
+    vlProduct: {
         type: Number,
         require: true
     },
-    nrPorcentagemDesconto: {
+    nrPercentDiscount: {
         type: Number,
-        default: 0
+        default: 0,
+        min: 0,
+        max: 100
     }
 })
 
-export default mongoose.model('produto', Produto)
+export default mongoose.model('product', Product)
